@@ -16,12 +16,8 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  try {
-    const blog = await Blog.create(req.body)
-    res.status(201).json(blog)
-  } catch (error) {
-    return res.status(400).json({ error: error.message })
-  }
+  const blog = await Blog.create(req.body)
+  res.status(201).json(blog)
 })
 
 router.delete('/:id', blogFinder, async (req, res) => {
