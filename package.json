@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "migration:down": "node util/rollback.js",
     "start:test": "TESTING=true PORT=3001 node index.js",
     "test": "TESTING=true node --test --test-concurrency=1 tests/api_ch3.test.js"
   },
@@ -24,7 +25,8 @@
     "express": "^5.3.0",
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.23.1",
-    "sequelize": "^6.37.8"
+    "sequelize": "^6.37.8",
+    "umzug": "^3.8.3"
   },
   "devDependencies": {
     "axios": "^1.21.0",
