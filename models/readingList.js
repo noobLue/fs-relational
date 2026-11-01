@@ -23,6 +23,13 @@ ReadingList.init({
     type: DataTypes.BOOLEAN,
     allowNull: false,
     defaultValue: false,
+    validate: {
+    isBooleanValue(value) {
+      if (typeof value !== 'boolean') {
+        throw new Error('read must be a boolean value')
+      }
+    },
+    }
   },
 }, {
   sequelize,
