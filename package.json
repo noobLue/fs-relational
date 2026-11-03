@@ -8,7 +8,7 @@
     "dev": "nodemon index.js",
     "migration:down": "node util/rollback.js",
     "start:test": "TESTING=true PORT=3001 node index.js",
-    "test": "TESTING=true node --test --test-concurrency=1 tests/api_ch3.test.js"
+    "test": "TESTING=true node --test --test-concurrency=1"
   },
   "repository": {
     "type": "git",

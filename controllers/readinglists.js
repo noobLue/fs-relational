@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', tokenExtractor, async (req, res) => {
   const r = await ReadingList.findByPk(req.params.id)
   if (!r) return res.status(404).json({ error: 'reading list not found' })
-  if (r.userId !== req.decodedToken.id) return res.status(403).json({ error: 'only the owner can modify their reading list' })
+  if (r.userId !== req.decodedToken.id) return res.status(401).json({ error: 'only the owner can modify their reading list' })
   
   r.read = req.body.read
   await r.save()
